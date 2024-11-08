@@ -171,9 +171,9 @@ if cihaz_soru == ("android"):
     """.format(Fore.LIGHTBLUE_EX, Fore.BLUE, Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.GREEN, Fore.LIGHTMAGENTA_EX,
                Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.BLUE, Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.GREEN, Fore.LIGHTMAGENTA_EX, Fore.BLUE))
     termuxanamenu = input("{}Hangi Toola Giriş Yapmak İstersiniz: {}".format(Fore.BLUE, Fore.RESET)).lower()
-    if termuxanamenu == 1:
+    if termuxanamenu == ("1"):
         termux31()
-        pyphsihersoru = input("{}Önceden hiç kurdunuz mu? {}y{}/{}n: {}".format(Fore.BLUE,Fore.GREEN, Fore.BLUE,Fore.RED, Fore.RESET)).lower()
+        pyphsihersoru = input("{}Önceden hiç PyPhisher kurdunuz mu? {}y{}/{}n: {}".format(Fore.BLUE,Fore.GREEN, Fore.BLUE,Fore.RED, Fore.RESET)).lower()
         if pyphsihersoru == ("n"):
             os.system("git clone https://gitlab.com/KasRoudra/PyPhisher.git")
             os.system("pkg install git python php openssh -y")
@@ -190,19 +190,26 @@ if cihaz_soru == ("android"):
             time.sleep(3)
             print(Fore.LIGHTRED_EX +"Hata Tespit Edildi En Başa Yönlendiriliyorsunuz... @zupppe")
             os.system("python3 multitool.py")
-    if termuxanamenu == 2:
+    if termuxanamenu == ("2"):
         termux31()
-        print(Fore.LIGHTBLUE_EX + "Yüklenmesi Biraz Zaman Alabilir..")
-        time.sleep(1.5)
-        termux31()        
-        os.system("git clone https://github.com/vHzEren/erenbomb.git")
-        os.chdir(sms_klasor)
-        os.system("pip install -r requirements.txt")
-        os.system("python erenbomb.py")
-    if termuxanamenu == 3:
-        termux31()
-    if termuxanamenu == 4:
-        termux31()
+        smsbombersoru = input("{}Önceden hiç Sms Bomber kurdunuz mu? {}y{}/{}n: {}".format(Fore.BLUE,Fore.GREEN, Fore.BLUE,Fore.RED, Fore.RESET)).lower()
+        if smsbombersoru == ("n"):
+            print(Fore.LIGHTBLUE_EX + "Yüklenmesi Biraz Zaman Alabilir..")
+            time.sleep(1.5)
+            termux31()        
+            os.system("git clone https://github.com/vHzEren/erenbomb.git")
+            os.chdir(sms_klasor)
+            os.system("pip install -r requirements.txt")
+            os.system("python erenbonmb.py")
+        if smsbombersoru == ("y"):
+            termux31()
+            os.chdir(sms_klasor)
+            os.system("python erenbomb.py")
+        if smsbombersoru != ("y", "n"):
+            termux31()
+            time.sleep(3)
+            print(Fore.LIGHTRED_EX +"Hata Tespit Edildi En Başa Yönlendiriliyorsunuz... @zupppe")
+            os.system("python multitool.py")
 if cihaz_soru == ("linux"):
     termux31()
     time.sleep(5)
